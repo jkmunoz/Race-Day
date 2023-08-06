@@ -1,35 +1,24 @@
-let randomNumber = Math.floor(Math.random() * 2001);
-var randomAge = Math.floor(Math.random() * 101)
-var earlyStart = '9:30am';
-var lateStart = '11:00am';
-var youthStart = '12:30pm';
+//Runner information. 
+let raceNumber = Math.floor(Math.random() * 1000);
+let runnerAge = Math.floor(Math.random() * 101);
+let earlyRegistration = true;
 
-function whichNumber(raceNumber) {
-    if (runner.registration === earlyStart && runner.age >= 18) {
-        console.log(randomNumber >= 1000);
-    } else {
-        console.log(randomNumber < 1000);
-    }
+//Assigns a number based on registration time and runner's age.
+if (runnerAge > 18 && earlyRegistration === true) {
+    raceNumber += 1000
 }
 
-function whenStart(startTime) {
-    if (runner.registration = true && runner.age >= 18) {
-        startTime = earlyStart;
-    } else if (runner.registration = false && runner.age >= 18) {
-        startTime = lateStart;
-    } else if (runner.age < 18) {
-        startTime = youthStart;
-    }
+//Determines when the runner will start based on registration and age. 
+if (earlyRegistration === true && runnerAge >= 18) {
+    startTime = `your run begins at 9:30am!`;
+} else if (earlyRegistration === false && runnerAge >= 18) {
+    startTime = 'Your run begins at 11:00am!';
+} else if (runnerAge < 18) {
+    startTime = 'Your run begins at 12:30pm!';
 }
 
-var runner = {
-    age: randomAge, 
-// 'registration' trait must be changed from the backend, not by user input. 
-    registration: true,
-    raceNumber: randomNumber,
-    startTime: whenStart,
-}
-
-console.log(runner);
-
-
+//Message to runner with all of their info. 
+console.log(`Age: ${runnerAge}`);
+console.log(`Number: ${raceNumber}`);
+console.log(`early registration: ${earlyRegistration}`);
+console.log(`Start time: ${startTime}`)
